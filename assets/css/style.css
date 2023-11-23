@@ -1,0 +1,410 @@
+body {
+  background-image: linear-gradient(
+    to left top,
+    #000000,
+    #000000,
+    #6d6d6d,
+    #000000
+  );
+  background-size: contain;
+  height: 100% !important;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden !important;
+}
+
+.header-sec {
+  font-family: "Star Wars", sans-serif;
+}
+
+.header-sec p{
+    color: #fce821 !important;
+    border-color: #fce821 !important;
+}
+
+.main-Text{
+    margin-bottom: -10px;
+}
+.main-icon{
+    margin-bottom: -10px;
+}
+.card-img {
+  object-fit: cover;
+  height: 310px;
+}
+
+.card {
+  height: 500px;
+}
+
+#card-2 img,
+#card-3 img,
+#card-8 img {
+  object-fit: contain;
+  height: 310px;
+}
+
+.show {
+  background-color: green;
+  color: white;
+}
+
+.hidden {
+  background-color: red;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox + label {
+  display: inline-block;
+  position: relative;
+  width: 150px;
+  height: 65px;
+  background: linear-gradient(
+      to right,
+      #000 0,
+      #515151 45%,
+      #e9e9e9 55%,
+      #a0a1a1 100%
+    )
+    0 0;
+  background-size: 325px 100%;
+  border-radius: 35px;
+  padding: 3.5px;
+  cursor: pointer;
+  transition: all 500ms ease;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2) inset;
+}
+.checkbox + label:before {
+  content: "Off";
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  left: 3.5px;
+  top: 3.5px;
+  border-radius: 100%;
+  background: #fff;
+  text-align: center;
+  line-height: 58px;
+  font-family: "Cabin", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #282828;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: left 500ms ease, color 500ms ease, transform 150ms ease;
+}
+.checkbox + label:active:before {
+  transform: scale(0.95);
+}
+
+.checkbox:checked + label {
+  background-position-x: -175px;
+}
+.checkbox:checked + label:before {
+  content: "On";
+  color: #a0a1a1;
+  left: 88.5px;
+}
+
+body {
+  perspective: 300px;
+}
+
+.force_field .sword {
+  transform-style: preserve-3d;
+  -webkit-animation: rotate 8000ms linear infinite;
+  animation: rotate 8000ms linear infinite;
+}
+.force_field .sword .grip {
+  position: absolute;
+  bottom: 0;
+  width: 6px;
+  height: 30px;
+  background: #fff;
+  transform-style: preserve-3d;
+  transform: translateX(-50%) translateY(10px);
+  border-radius: 0 0 99px 99px;
+}
+.force_field .sword .grip::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 30px;
+  background: #aaa;
+  transform: rotateY(-45deg);
+  border-radius: 0 0 99px 99px;
+}
+.force_field .sword .grip::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 30px;
+  background: #ddd;
+  transform: rotateY(45deg);
+  border-radius: 0 0 99px 99px;
+}
+.force_field .sword .beam {
+  position: absolute;
+  bottom: 0;
+  width: 6px;
+  height: 160px;
+  background: rgba(150, 150, 255, 0.8);
+  transform-style: preserve-3d;
+  transform: translateX(-50%) translateY(-23px);
+  border-radius: 99px 99px 0 0;
+  box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.7),
+    -10px -5px 60px 5px #0064ff, -50px 15px 100px 10px rgba(0, 100, 255, 0.7);
+  -webkit-animation: mainBeam 10000ms ease-in-out infinite alternate;
+  animation: mainBeam 10000ms ease-in-out infinite alternate;
+}
+.force_field .sword .beam::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 160px;
+  background: rgba(50, 100, 255, 0.8);
+  transform: rotateY(-45deg);
+  border-radius: 99px 99px 0 0;
+  box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.7);
+  -webkit-animation: subBeam 10000ms ease-in-out infinite alternate;
+  animation: subBeam 10000ms ease-in-out infinite alternate;
+}
+.force_field .sword .beam::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 160px;
+  background: rgba(50, 100, 255, 0.8);
+  transform: rotateY(45deg);
+  border-radius: 99px 99px 0 0;
+  box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.7);
+  -webkit-animation: subBeam 10000ms ease-in-out infinite alternate;
+  animation: subBeam 10000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(1080deg) rotateZ(2160deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(1080deg) rotateZ(2160deg);
+  }
+}
+@-webkit-keyframes mainBeam {
+  0% {
+    background: rgba(150, 150, 255, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.7),
+      -10px -5px 60px 5px #0064ff, -50px 15px 100px 10px rgba(0, 100, 255, 0.7);
+  }
+  20% {
+    background: rgba(150, 150, 255, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.7),
+      -10px -5px 60px 5px #0064ff, -50px 15px 100px 10px rgba(0, 100, 255, 0.7);
+  }
+  30% {
+    background: rgba(150, 255, 150, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 255, 100, 0.7),
+      -10px -5px 60px 5px #00ff64, -50px 15px 100px 10px rgba(0, 255, 100, 0.7);
+  }
+  70% {
+    background: rgba(150, 255, 150, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 255, 100, 0.7),
+      -10px -5px 60px 5px #00ff64, -50px 15px 100px 10px rgba(0, 255, 100, 0.7);
+  }
+  80% {
+    background: rgba(250, 150, 150, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(255, 0, 50, 0.7),
+      -10px -5px 60px 5px #ff0032, -50px 15px 100px 10px rgba(255, 0, 50, 0.7);
+  }
+  100% {
+    background: rgba(250, 150, 150, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(255, 0, 50, 0.7),
+      -10px -5px 60px 5px #ff0032, -50px 15px 100px 10px rgba(255, 0, 50, 0.7);
+  }
+}
+@keyframes mainBeam {
+  0% {
+    background: rgba(150, 150, 255, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.7),
+      -10px -5px 60px 5px #0064ff, -50px 15px 100px 10px rgba(0, 100, 255, 0.7);
+  }
+  20% {
+    background: rgba(150, 150, 255, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.7),
+      -10px -5px 60px 5px #0064ff, -50px 15px 100px 10px rgba(0, 100, 255, 0.7);
+  }
+  30% {
+    background: rgba(150, 255, 150, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 255, 100, 0.7),
+      -10px -5px 60px 5px #00ff64, -50px 15px 100px 10px rgba(0, 255, 100, 0.7);
+  }
+  70% {
+    background: rgba(150, 255, 150, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 255, 100, 0.7),
+      -10px -5px 60px 5px #00ff64, -50px 15px 100px 10px rgba(0, 255, 100, 0.7);
+  }
+  80% {
+    background: rgba(250, 150, 150, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(255, 0, 50, 0.7),
+      -10px -5px 60px 5px #ff0032, -50px 15px 100px 10px rgba(255, 0, 50, 0.7);
+  }
+  100% {
+    background: rgba(250, 150, 150, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(255, 0, 50, 0.7),
+      -10px -5px 60px 5px #ff0032, -50px 15px 100px 10px rgba(255, 0, 50, 0.7);
+  }
+}
+@-webkit-keyframes subBeam {
+  0% {
+    background: rgba(50, 100, 255, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.5);
+  }
+  20% {
+    background: rgba(50, 100, 255, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.5);
+  }
+  30% {
+    background: rgba(50, 255, 100, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 255, 100, 0.5);
+  }
+  70% {
+    background: rgba(50, 255, 100, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 255, 100, 0.5);
+  }
+  80% {
+    background: rgba(255, 100, 50, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(255, 0, 50, 0.5);
+  }
+  100% {
+    background: rgba(255, 100, 50, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(255, 0, 50, 0.5);
+  }
+}
+@keyframes subBeam {
+  0% {
+    background: rgba(50, 100, 255, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.5);
+  }
+  20% {
+    background: rgba(50, 100, 255, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 100, 255, 0.5);
+  }
+  30% {
+    background: rgba(50, 255, 100, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 255, 100, 0.5);
+  }
+  70% {
+    background: rgba(50, 255, 100, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(0, 255, 100, 0.5);
+  }
+  80% {
+    background: rgba(255, 100, 50, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(255, 0, 50, 0.5);
+  }
+  100% {
+    background: rgba(255, 100, 50, 0.8);
+    box-shadow: 0 -5px 30px 5px rgba(255, 0, 50, 0.5);
+  }
+}
+
+
+@media (max-width: 992px){
+    .main-Text{
+        font-size: 1.3rem;
+    }
+}
+@media (max-width: 568px){
+    .main-Text{
+        font-size: 1.2rem;
+    }
+}
+
+
+
+
+.radio {
+  position: relative;
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 14px;
+  margin: 15px;
+}
+.radio .label {
+  position: relative;
+  display: block;
+  float: left;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #c8ccd4;
+  border-radius: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+.radio .label:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #fce821;
+  transform: scale(0);
+  transition: all 0.2s ease;
+  opacity: 0.08;
+  pointer-events: none;
+}
+.radio:hover .label:after {
+  transform: scale(3.6);
+}
+input[type="radio"]:checked + .label {
+  border-color: #fce821;
+}
+input[type="radio"]:checked + .label:after {
+  transform: scale(1);
+  transition: all 0.2s cubic-bezier(0.35, 0.9, 0.4, 0.9);
+  opacity: 1;
+}
+.cntr {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+.credit {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  opacity: 0.6;
+}
+.credit img {
+  width: 72px;
+}
+.credit:hover {
+  transform: scale(0.95);
+}
