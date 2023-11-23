@@ -142,14 +142,15 @@ const body = document.querySelector("body");
 const createRadioInput = () => {
   const radioInput = document.createElement("div");
   radioInput.classList.add("radioInput");
-  const radioInputContent = ` <div class="cntr"> </div>`;
+  const radioInputContent = ` <div class="form-check"> </div>`;
   radioInput.innerHTML = radioInputContent;
   body.append(radioInput);
   const mainDiv = document.querySelector(".cntr");
   for (home of homeworld) {
-    const radioContent = `<label for="homeworld-${home}" class="radio">
-    <input type="radio" name="homeworld" id="homeworld-${home}" onclick="filterRadio(this)"; value="${home}" class="hidden  ${home}"/>
-    <span class="label"></span>${home}
+    const radioContent = `
+    <input class="form-check-input mx-4" onclick="radioFilter('${home}')" type="radio" name="radio" id="homeworld-${home}" value="${home}">
+  <label class="form-check-label text-light" for="homeworld-${home}">
+    ${home}
   </label>`;
     radioInput.innerHTML += radioContent;
   }
@@ -179,13 +180,11 @@ function showAndHidden() {
       mainSection.innerHTML = sectionContent;
       body.append(mainSection);
       for (character of characters) {
-
-        console.log(character);
         const card = document.createElement("div");
         card.classList = "col-12 col-md-6 col-lg-4 col-xl-3 main-card";
 
         const cardContent = ` 
-          <div class="card bg-dark text-light" id="card-${character.id}">
+          <div class="card bg-dark text-light ${character.name}" id="card-${character.id}">
             <img src="${character.pic}" class="card-img-top card-img" alt="#" />
             <div class="card-body card-name">
               <h4>${character.name}</h4>
@@ -200,6 +199,7 @@ function showAndHidden() {
         card.innerHTML = cardContent;
         const mainRow = document.querySelector("#main-row");
         mainRow.append(card);
+        // cardFilter()
       }
     } else {
       document.querySelector(".mainSection").remove();
@@ -209,14 +209,32 @@ function showAndHidden() {
   }
 }
 
-const radios = document.querySelectorAll(".radio")
-const filterRadio = (input) => {
-  const radioValue = String(input.value);
-  {
-    if (homeworld.includes(radioValue)) {
-      console.log(radioValue);
-      return radioValue;
+const radios = document.getElementsByName("radio");
+const getMainSection = document.getElementsByClassName("mainSection");
+const cards = document.getElementsByClassName("main-card");
+
+const cardHomeworld = document.getElementsByClassName("card-homeworld");
+
+function radioFilter(radioValueName) {
+  for (radioItem of radios) {
+    const radioValue = String(radioValueName);
+    if (homeworld.includes(radioValue) && getMainSection.length == 1) {
+      for (mainCard of cards) {
+        mainCard.classList.add("d-none");
+        const cardElP = mainCard.querySelector(".card-homeworld").innerHTML;
+        if (cardElP.includes(radioValue)) {
+          mainCard.classList.remove("d-none");
+        } else {
+          mainCard.classList.add("d-none");
+        }
+      }
+    } else {
+
     }
   }
-};
- 
+}
+
+// function cardFilter(){
+//   console.log(mainCard);
+//   var mainCard = document.querySelectorAll(".main-card");
+// }
