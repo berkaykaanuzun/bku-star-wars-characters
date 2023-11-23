@@ -183,7 +183,7 @@ function showAndHidden() {
         const card = document.createElement("div");
         card.classList = "col-12 col-md-6 col-lg-4 col-xl-3 main-card";
 
-        const cardContent = ` 
+        let cardContent = ` 
           <div class="card bg-dark text-light ${character.name}" id="card-${character.id}">
             <img src="${character.pic}" class="card-img-top card-img" alt="#" />
             <div class="card-body card-name">
@@ -196,6 +196,20 @@ function showAndHidden() {
             </div>
           </div>
           `;
+         if (cardContent.includes("undefined")) {
+    cardContent = ` 
+        <div class="card bg-dark text-light ${character.name}" id="card-${character.id}">
+            <img src="${character.pic}" class="card-img-top card-img" alt="#" />
+            <div class="card-body card-name">
+                <h4>${character.name}</h4>
+                <p class="card-text card-homeworld">
+                    other
+                </p>
+                <hr> 
+            </div>
+        </div>
+    `;
+}
         card.innerHTML = cardContent;
         const mainRow = document.querySelector("#main-row");
         mainRow.append(card);
