@@ -150,7 +150,7 @@ const createRadioInput = () => {
     const radioContent = `
     <input class="form-check-input mx-4" onclick="radioFilter('${home}')" type="radio" name="radio" id="homeworld-${home}" value="${home}">
   <label class="form-check-label text-light" for="homeworld-${home}">
-    ${home}
+    ${home.charAt(0).toUpperCase() + home.slice(1)}
   </label>`;
     radioInput.innerHTML += radioContent;
   }
@@ -182,34 +182,30 @@ function showAndHidden() {
       for (character of characters) {
         const card = document.createElement("div");
         card.classList = "col-12 col-md-6 col-lg-4 col-xl-3 main-card";
+        if (character.homeworld) {
+        } else {
+          character.homeworld = "other";
+        }
 
         let cardContent = ` 
-          <div class="card bg-dark text-light ${character.name}" id="card-${character.id}">
+          <div class="card bg-dark text-light ${character.name}" id="card-${
+          character.id
+        }">
             <img src="${character.pic}" class="card-img-top card-img" alt="#" />
             <div class="card-body card-name">
               <h4>${character.name}</h4>
               
               <p class="card-text card-homeworld">
-              ${character.homeworld}
+              ${
+                character.homeworld.charAt(0).toUpperCase() +
+                character.homeworld.slice(1)
+              }
               </p>
               <hr> 
             </div>
           </div>
           `;
-         if (cardContent.includes("undefined")) {
-    cardContent = ` 
-        <div class="card bg-dark text-light ${character.name}" id="card-${character.id}">
-            <img src="${character.pic}" class="card-img-top card-img" alt="#" />
-            <div class="card-body card-name">
-                <h4>${character.name}</h4>
-                <p class="card-text card-homeworld">
-                    other
-                </p>
-                <hr> 
-            </div>
-        </div>
-    `;
-}
+
         card.innerHTML = cardContent;
         const mainRow = document.querySelector("#main-row");
         mainRow.append(card);
@@ -235,7 +231,9 @@ function radioFilter(radioValueName) {
     if (homeworld.includes(radioValue) && getMainSection.length == 1) {
       for (mainCard of cards) {
         mainCard.classList.add("d-none");
-        const cardElP = mainCard.querySelector(".card-homeworld").innerHTML;
+        const cardElP = mainCard
+          .querySelector(".card-homeworld")
+          .innerHTML.toLowerCase();
         if (cardElP.includes(radioValue)) {
           mainCard.classList.remove("d-none");
         } else {
@@ -243,7 +241,6 @@ function radioFilter(radioValueName) {
         }
       }
     } else {
-
     }
   }
 }
