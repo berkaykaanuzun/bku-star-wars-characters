@@ -18,16 +18,16 @@ body {
   font-family: "Star Wars", sans-serif;
 }
 
-.header-sec p{
-    color: #fce821 !important;
-    border-color: #fce821 !important;
+.header-sec p {
+  color: #fce821 !important;
+  border-color: #fce821 !important;
 }
 
-.main-Text{
-    margin-bottom: -10px;
+.main-Text {
+  margin-bottom: -10px;
 }
-.main-icon{
-    margin-bottom: -10px;
+.main-icon {
+  margin-bottom: -10px;
 }
 .card-img {
   object-fit: cover;
@@ -325,17 +325,19 @@ body {
   }
 }
 
-
-@media (max-width: 992px){
-    .main-Text{
-        font-size: 1.3rem;
-    }
+@media (max-width: 992px) {
+  .main-Text {
+    font-size: 1.3rem;
+  }
 }
-@media (max-width: 568px){
-    .main-Text{
-        font-size: 1.2rem;
-    }
+@media (max-width: 568px) {
+  .main-Text {
+    font-size: 1.2rem;
+  }
 }
-
-
-
+.form-check {
+  display: inline-flex;
+  padding: 0;
+  margin-top: 1rem;
+  font-family: "Roboto" , sans -serif;
+}

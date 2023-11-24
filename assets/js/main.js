@@ -138,24 +138,27 @@ const homeworld = homeworldUnique.map((item) => {
 });
 
 const body = document.querySelector("body");
+const radioRow = document.getElementById("radioRow")
+
 
 const createRadioInput = () => {
   const radioInput = document.createElement("div");
   radioInput.classList.add("radioInput");
-  const radioInputContent = ` <div class="form-check"> </div>`;
+  const radioInputContent = `  `;
   radioInput.innerHTML = radioInputContent;
   body.append(radioInput);
   const mainDiv = document.querySelector(".cntr");
   for (home of homeworld) {
-    const radioContent = `
+    const radioContent = `<div class="form-check">
     <input class="form-check-input mx-4" onclick="radioFilter('${home}')" type="radio" name="radio" id="homeworld-${home}" value="${home}">
   <label class="form-check-label text-light" for="homeworld-${home}">
     ${home.charAt(0).toUpperCase() + home.slice(1)}
-  </label>`;
+  </label></div>`;
     radioInput.innerHTML += radioContent;
+    radioRow.append(radioInput)
   }
 };
-createRadioInput();
+
 
 console.log(homeworld);
 
@@ -168,6 +171,7 @@ function showAndHidden() {
   {
     if (buttonIndex % 2 == 0) {
       buttonIndex++;
+      createRadioInput();
       const mainSection = document.createElement("section");
       mainSection.classList.add("mainSection");
       const sectionContent = `<section id="characters-sec" class="py-5">
@@ -215,6 +219,7 @@ function showAndHidden() {
       document.querySelector(".mainSection").remove();
       buttonIndex++;
       document.querySelector("body").classList.add("overflow-hidden");
+      radioInputNew = document.querySelector(".radioInput").remove();
     }
   }
 }
