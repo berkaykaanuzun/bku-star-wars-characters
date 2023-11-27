@@ -249,6 +249,12 @@ function radioFilter(radioValueName) {
   }
 }
 
+const titleButton = document.getElementById("title-button");
+const onAndOffButton = document.getElementById("onAndOffButton")
+titleButton.addEventListener("click" , function(){
+  onAndOffButton.click()
+})
+
 // function cardFilter(){
 //   console.log(mainCard);
 //   var mainCard = document.querySelectorAll(".main-card");
