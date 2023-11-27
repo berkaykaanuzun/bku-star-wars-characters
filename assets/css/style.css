@@ -341,3 +341,131 @@ body {
   margin-top: 1rem;
   font-family: "Roboto" , sans -serif;
 }
+
+
+.radio-group {
+  display: flex;
+ 
+  gap: 20px;
+}
+
+.form-check-input[type="radio"] {
+  display: none;
+}
+
+.form-check-label {
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.form-check-label:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #fff;
+  transition: background-color 0.3s;
+}
+
+ input[type="radio"]:checked + label:before {
+  background-color: #fff;
+}
+
+ input[type="radio"]:focus + label {
+  color: #fce821;
+}
+
+ input[type="radio"]:checked + label {
+  color: #fce821;
+}
+
+/* Neon Style */
+ input[type="radio"] + label:before {
+  box-shadow: 0 0 10px #fce821;
+}
+
+ input[type="radio"]:checked + label:before {
+  box-shadow: 0 0 10px #fce821, 0 0 20px #fce821, 0 0 30px #fce821; 
+}
+
+ input[type="radio"]:hover + label:before {
+  background-color: #fce821;
+}
+
+ input[type="radio"]:focus + label:before {
+  background-color: #fce821;
+}
+
+
+.neon {
+  text-align: center;
+  color: #fff;
+  position: relative;
+  animation: neon 1s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 5px #fce821, 0 0 5px #fce821, 0 0 5px #fce821, 0 0 10px #fce821,
+      0 0 15px #fce821, 0 0 20px #fce821, 0 0 20px #fce821;
+  }
+  to {
+    text-shadow: 0 0 10px #6d6d6d, 0 0 15px #6d6d6d, 0 0 20px #6d6d6d, 0 0 35px #6d6d6d,
+      0 0 40px #6d6d6d, 0 0 50px #6d6d6d, 0 0 75px #6d6d6d;
+  }
+}
+
+
+p{
+  padding-bottom: 10px;
+
+  box-shadow: 0 6px 2px -2px #fce821;
+}
+
+.card{
+  box-shadow: 0 0 10px #fce821, 0 0 10px #fce821, 0 0 10px #fce821; 
+
+}
+
+
+@media (min-width: 1200px){
+  .neon{
+    margin-bottom: -2%;
+  }
+}
+
+@media (min-width: 992px){
+  .neon{
+    margin-bottom: -1%;
+  }
+}
+
+@media (max-width: 992px){
+  .neon{
+    margin-top: -2%;
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 552px){
+  .neon{
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 552px){
+  .neon{
+    padding: 0.6rem 0;
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+}

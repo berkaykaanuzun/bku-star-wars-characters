@@ -199,13 +199,12 @@ function showAndHidden() {
             <div class="card-body card-name">
               <h4>${character.name}</h4>
               
-              <p class="card-text card-homeworld">
-              ${
-                character.homeworld.charAt(0).toUpperCase() +
-                character.homeworld.slice(1)
+              <p class="card-text card-homeworld">Homeworld:
+              ${ 
+                 character.homeworld.charAt(0).toUpperCase() +
+                 character.homeworld.slice(1)
               }
               </p>
-              <hr> 
             </div>
           </div>
           `;
